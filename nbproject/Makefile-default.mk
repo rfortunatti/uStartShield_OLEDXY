@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=testmain.c Shield_LEDLib.c
+SOURCEFILES_QUOTED_IF_SPACED=testmain.c Shield_LEDLib.c Shield_Joystick.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/testmain.p1 ${OBJECTDIR}/Shield_LEDLib.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/testmain.p1.d ${OBJECTDIR}/Shield_LEDLib.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/testmain.p1 ${OBJECTDIR}/Shield_LEDLib.p1 ${OBJECTDIR}/Shield_Joystick.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/testmain.p1.d ${OBJECTDIR}/Shield_LEDLib.p1.d ${OBJECTDIR}/Shield_Joystick.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/testmain.p1 ${OBJECTDIR}/Shield_LEDLib.p1
+OBJECTFILES=${OBJECTDIR}/testmain.p1 ${OBJECTDIR}/Shield_LEDLib.p1 ${OBJECTDIR}/Shield_Joystick.p1
 
 # Source Files
-SOURCEFILES=testmain.c Shield_LEDLib.c
+SOURCEFILES=testmain.c Shield_LEDLib.c Shield_Joystick.c
 
 
 
@@ -110,6 +110,14 @@ ${OBJECTDIR}/Shield_LEDLib.p1: Shield_LEDLib.c  nbproject/Makefile-${CND_CONF}.m
 	@-${MV} ${OBJECTDIR}/Shield_LEDLib.d ${OBJECTDIR}/Shield_LEDLib.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Shield_LEDLib.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Shield_Joystick.p1: Shield_Joystick.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Shield_Joystick.p1.d 
+	@${RM} ${OBJECTDIR}/Shield_Joystick.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Shield_Joystick.p1 Shield_Joystick.c 
+	@-${MV} ${OBJECTDIR}/Shield_Joystick.d ${OBJECTDIR}/Shield_Joystick.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Shield_Joystick.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/testmain.p1: testmain.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -126,6 +134,14 @@ ${OBJECTDIR}/Shield_LEDLib.p1: Shield_LEDLib.c  nbproject/Makefile-${CND_CONF}.m
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Shield_LEDLib.p1 Shield_LEDLib.c 
 	@-${MV} ${OBJECTDIR}/Shield_LEDLib.d ${OBJECTDIR}/Shield_LEDLib.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Shield_LEDLib.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Shield_Joystick.p1: Shield_Joystick.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Shield_Joystick.p1.d 
+	@${RM} ${OBJECTDIR}/Shield_Joystick.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Shield_Joystick.p1 Shield_Joystick.c 
+	@-${MV} ${OBJECTDIR}/Shield_Joystick.d ${OBJECTDIR}/Shield_Joystick.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Shield_Joystick.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

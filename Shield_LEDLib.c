@@ -32,12 +32,39 @@ void setLEDMask(char mask)
     return;
 }
 
-void setLEDId(enum_LEDID id)
+void setLEDId(enum_LEDID id, int value)
+{
+    if(id > 5 || id < 1)
+        return;
+    if(value != 1 || value != 0)
+        return;
+    
+    switch(id)
+    {
+        case L1:
+            LATDbits.LED01 = value;
+            break;
+        case L2:
+            LATDbits.LED02 = value;
+            break;
+        case L3:
+            LATDbits.LED03 = value;
+            break;
+        case L4:
+            LATDbits.LED04 = value;
+            break;
+        case L5:
+            LATDbits.LED05 = value;
+            break;
+    }  
+}
+
+void toggleLEDId(enum_LEDID id)
 {
     if(id > 5 || id < 1)
         return;
     
-    switch(id)
+        switch(id)
     {
         case L1:
             LATDbits.LED01 = ~LATDbits.LED01;
@@ -55,6 +82,5 @@ void setLEDId(enum_LEDID id)
             LATDbits.LED05 = ~LATDbits.LED05;
             break;
     }
-    
-}       
+}
 

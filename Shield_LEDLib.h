@@ -23,4 +23,5 @@ typedef enum {
 
 void initLED();
 void setLEDMask(char mask);
-void setLEDId(enum_LEDID id);
+void setLEDId(enum_LEDID id, int value);
+void toggleLEDId(enum_LEDID id);
