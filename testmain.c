@@ -77,26 +77,44 @@
 #include <stdbool.h>
 
 #include "Shield_LEDLib.h"
+#include "Shield_Joystick.h"
 
 void main(void) {
     OSCCONbits.IRCF = 0b00000110; //Internal Osc @ 8Mhz No PLL
     initLED();
     ANSELA = 0;
     
+    initJoystick();
+    
     while(true)
     {
-        __delay_ms(1000);
-        setLEDId(L1);
-        __delay_ms(1000);
-        setLEDId(L2);
-        __delay_ms(1000);
-        setLEDId(3);
-        __delay_ms(1000);
-        setLEDId(L4);
-        __delay_ms(1000);
-        setLEDId(5);
+        int joyRes = readPositionJoy();
+        if(joyRes == 1)
+            setLEDId(L1, 1);
         
+        
+        __delay_ms(1000);
+        setLEDId(L1, 0);
+        setLEDId(L2, 0);
+        setLEDId(L3, 0);
+        setLEDId(L4, 0);
+        setLEDId(L5, 0);
     }
+    
+//    while(true)
+//    {
+//        __delay_ms(1000);
+//        setLEDId(L1);
+//        __delay_ms(1000);
+//        setLEDId(L2);
+//        __delay_ms(1000);
+//        setLEDId(3);
+//        __delay_ms(1000);
+//        setLEDId(L4);
+//        __delay_ms(1000);
+//        setLEDId(5);
+//        
+//    }
     
     return;
     
