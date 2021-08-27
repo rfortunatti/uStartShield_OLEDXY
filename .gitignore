@@ -1,0 +1,10 @@
+# Compiled files
+*.hex
+*.elf
+*.o
+*.so
+
+# Ignored folders
+build/
+debug/
+dist/
